@@ -8,13 +8,13 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'cabin', 'tahoma', sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: 'volhov', 'lucida bright', serif;
 }
 #tagline {
     font-style: italic;
@@ -38,10 +38,14 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail bobwhite-quail readability readability readability"
+        "bobwhite-quail bobwhite-quail line-length line-length line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "footer footer footer footer footer";
 }
 
 /* all grid items -
@@ -53,43 +57,71 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    font-size: 25px;
+    padding: 0.5em 0.5em;
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 3.5em 1em 2em 1em;
+    font-size: 16px;
+    line-height: 110%;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 3.5em 1em 2em 1em;
+    font-size: 16px;
+    line-height: 110%;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 2em 2em;
+    font-size: 23px;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    font-size: 16px;
+    padding: 3em 3em;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 1em 4em 0em 1em;
+    margin: 0;
+    font-size: 18px;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 0em 4em 1em 1em;
+    font-size: 18px;
+    margin: 0;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin: 5rem 3rem 35rem 3rem;
+    padding: 2em 1em 2em 2em;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    text-shadow: 1px 1px black;
+    margin: 0rem 0rem 0rem 0rem;
+    font-size: 23px;
+    padding: 2em 2em;
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
+    font-size: 22px
 }
 
 /* end of all 10 grid items */
@@ -105,3 +137,46 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+@media screen and (max-width: 1000px) {
+    body {
+      margin: 1rem;
+    }
+    h1, h2 {
+      padding: 1 rem
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #container {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(9, auto);
+      grid-template-areas:
+          "header header header header"
+          "pairing pairing pairing pairing"
+          "arial arial georgia georgia"
+          "bobwhite-quail bobwhite-quail bobwhite-quail bobwhite-quail"
+          "readability readability readability readability"
+          "line-length line-length line-length line-length"
+          "helvetica helvetica helvetica helvetica"
+          "typeface typeface typeface typeface"
+          "footer footer footer footer";
+    }
+}
+
+@media screen and (max-width: 690px) {
+    #container {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(10, auto);
+      grid-template-areas:
+          "header"
+          "pairing"
+          "arial"
+          "georgia"
+          "bobwhite-quail"
+          "readability"
+          "line-length"
+          "helvetica"
+          "typeface"
+          "footer";
+    }
+}
